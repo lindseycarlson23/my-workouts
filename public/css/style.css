@@ -1,0 +1,16 @@
+:root {
+    --primary: #98ddbc;
+    --secondary: #e0d2c3;
+    --tertiary: #39805b;
+    --quatrinary: #171615;
+    --light: #e3e4e3;
+    --dark: #182c23;
+}
+
+header {
+    background-color: var(--primary);
+}
+
+body {
+    background-color: var(--light);
+}
