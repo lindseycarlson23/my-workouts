@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My-Workout</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" type="text/css" href="../../public/css/jass.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+</head>
+
+<body>
+    <header class="py-6 sm:py-8 flex">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-left mx-6 w-2/6">My Workout</h1>
+        <nav class="w-4/6">
+            <button ata-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 absolute right-32 article-text" type="button" id="USER-btn">User Page</button>
+            <button ata-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 absolute right-8 article-text" type="button" id="Login">Logout</button>
+            
+        </nav>
+    </header>
+
+    <section>
+        <div class="row">
+            <div class="col-md-3 my-20 ml-auto logincard p-5 mr-1">
+              <h2 class="title text-center mb-10">Login</h2>
+          
+              <form class="form login-form mb-10">
+                <div class="form-group ">
+                  <label for="email-login">email:</label>
+                  <input class="form-input " type="text" id="email-login" />
+                </div>
+                <div class="form-group">
+                  <label for="password-login">password:</label>
+                  <input class="form-input" type="password" id="password-login" />
+                </div>
+                <div class="form-group mt-10">
+                  <button class="btn btn-primary" type="submit">login</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-3 my-20 mr-auto logincard p-5 mr-1">
+              <h2 class="title text-center">Signup</h2>
+          
+              <form class="form signup-form">
+                <div class="form-group">
+                  <label for="name-signup">name:</label>
+                  <input class="form-input" type="text" id="name-signup" />
+                </div>
+                <div class="form-group">
+                  <label for="email-signup">email:</label>
+                  <input class="form-input" type="text" id="email-signup" />
+                </div>
+                <div class="form-group">
+                  <label for="password-signup">password:</label>
+                  <input class="form-input" type="password" id="password-signup" />
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary" type="submit">signup</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <script src="./js/login.js"></script>
+    </section>
+</body>
+
+</html>
