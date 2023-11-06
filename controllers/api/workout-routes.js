@@ -4,7 +4,10 @@
 router.post('/:id', async (req, res) => {
     const body = req.body
     try {
-        const newWorkout = await Workout.create({ ...body, userId: req.params.id })
+        const newWorkout = await Workout.create({ 
+            ...body, 
+            userId: req.params.id, 
+        });
 
         // either send the data
         // res.status(200).json(newWorkout)
