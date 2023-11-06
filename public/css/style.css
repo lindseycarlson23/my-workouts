@@ -14,3 +14,16 @@ header {
 body {
     background-color: var(--light);
 }
+
+.logincard {
+    background-color: var(--primary);
+    border-radius: 5px;
+    border-color: var(--tertiary);
+    border-width: 2px;
+    color: var(--quatrinary);
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+}
