@@ -1,0 +1,37 @@
+<<div class="row w-full pl-6">
+        <div id="recommendations" class="col w-1/6 ml-1 mt-8">
+            {{#each recommendations as |recommendation|}}
+                <div class="reccard">
+                    <h3 class="rectitle">{{recommendation.title}}</h3>
+                    <img class="recimg w-40 h-28">{{recommendation.image}}</img>
+                    <p>{{recommendation.type}}</p>
+                </div>
+            {{/each}}
+        </div>
+        <div id="postsec" class="row w-5/6 mt-8 pl-20 h-10">
+            <div id="addbtn" class="row w-full h-20">
+                <h2 id="username" class="w-1/2">{{name}}</h2>
+                <button ata-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 absolute right-16 article-text" type="button" id="Login">CREATE POST</button>
+            </div>
+            <div class="w-full row">
+                <div id="posts" class="col w-4/6">
+                    {{#each posts as |post|}}
+                      <div class="postcard w-full flex flex-col">
+                        <h4 class="ptitle text-center leading-normal">{{post.name}}</h4>
+                        <p class="leading-normal">{{post.info}}</p>
+                        <p class="leading-loose">{{post.type}}</p>
+                        <div class="flex justify-end">
+                          <button class="bg-green-700 rounded-full text-red-100 w-1/6">DELETE</button>
+                        </div>
+                      </div>
+                      </div>
+                    {{/each}}
+                </div>
+                <div id="chart" class="w-2/6">
+                  <p class="postcard">placeholder</p>
+                </div>
+            </div>
+        </div>
+    </div>
+              
+    <script src=""></script>

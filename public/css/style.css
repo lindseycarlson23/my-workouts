@@ -1,6 +1,6 @@
 :root {
     --primary: #98ddbc;
-    --secondary: #e0d2c3;
+    --secondary: #84c297;
     --tertiary: #39805b;
     --quatrinary: #171615;
     --light: #e3e4e3;
@@ -15,6 +15,8 @@ body {
     background-color: var(--light);
 }
 
+
+
 .logincard {
     background-color: var(--primary);
     border-radius: 5px;
@@ -26,4 +28,46 @@ body {
 .title {
     text-align: center;
     font-size: 30px;
+}
+
+.reccard {
+    margin: 20px;
+    background-color: var(--secondary);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.rectitle {
+    font-size: 25px;
+}
+
+.postcard {
+    background-color: var(--secondary);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ptitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#recommendations {
+    background-color: var(--primary);
+    border-radius: 5px;
+    border-color: var(--tertiary);
+    border-width: 2px;
+    color: var(--quatrinary);
+    text-align: center;
+}
+
+#username {
+    font-size: 40px;
+    color: var(--tertiary);
+}
+
+#chart {
+    padding: 10px;
 }
