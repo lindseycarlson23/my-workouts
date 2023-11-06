@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// import models here
 const { User } = require('../../models');
 
 // CREATE new user
