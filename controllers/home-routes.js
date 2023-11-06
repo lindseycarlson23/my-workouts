@@ -34,5 +34,32 @@ router.get('/:id', async (req, res) => {
     }
   });
 
- 
+// Route to show the user profile
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findbyPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Workout }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', (req, res) => {
+  // if user is already logged in, redirect to their profile page
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('login');
+})
 // Get Route to show suggestion workouts - randomly chosen
