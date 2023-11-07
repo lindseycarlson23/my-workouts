@@ -21,68 +21,17 @@
     </header>
 
     <section>
-      <div class="row w-full pl-6">
-        <div id="recommendations" class="col w-1/6 ml-1 mt-8">
-            <!-- {{#each recommendations as |recommendation|}} -->
-                <div class="reccard">
-                    <h3 class="rectitle"><!--{{recommendation.title}} -->title1</h3>
-                    <img class="recimg w-40 h-28"><!--{{recommendation.image}} --></img>
-                    <p><!--{{recommendation.type}} -->cardio</p>
-                </div>
-                <div class="reccard">
-                  <h3 class="rectitle"><!--{{recommendation.title}} -->title2</h3>
-                  <img class="recimg w-40 h-28"><!--{{recommendation.image}} --></img>
-                  <p><!--{{recommendation.type}} -->mucsle growth</p>
-                </div>
-                <div class="reccard">
-                  <h3 class="rectitle"><!--{{recommendation.title}} -->title3</h3>
-                  <img class="recimg w-40 h-28"><!--{{recommendation.image}} --></img>
-                  <p><!--{{recommendation.type}} -->cardio</p>
-                </div>
-            <!--{{/each}} -->
-        </div>
-        <div id="postsec" class="row w-5/6 mt-8 pl-20 h-10">
-            <div id="addbtn" class="row w-full h-20">
-                <h2 id="username" class="w-1/2"><!--{{name}} -->Lindsey's posts:</h2>
-                <button ata-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 absolute right-16 article-text" type="button" id="Login">CREATE POST</button>
-            </div>
-            <div class="w-full row">
-                <div id="posts" class="col w-4/6">
-                    <!--{{#each posts as |post|}} -->
-                      <div class="postcard w-full flex flex-col">
-                        <h4 class="ptitle text-center leading-normal"><!--{{post.name}} -->example1</h4>
-                        <p class="leading-normal"><!--{{post.info}} -->info1</p>
-                        <p class="leading-loose"><!--{{post.type}} -->cardio</p>
-                        <div class="flex justify-end">
-                          <button class="bg-green-700 rounded-full text-red-100 w-1/6">DELETE</button>
-                        </div>
-                      </div>
-                      <div class="postcard w-full flex flex-col">
-                        <h4 class="ptitle text-center leading-normal"><!--{{post.name}} -->example2</h4>
-                        <p class="leading-normal"><!--{{post.info}} -->info2</p>
-                        <p class="leading-loose"><!--{{post.type}} -->muscle growth</p>
-                        <div class="flex justify-end">
-                          <button class="bg-green-700 rounded-full text-red-100 w-1/6">DELETE</button>
-                        </div>
-                      </div>
-                      <div class="postcard w-full flex flex-col">
-                        <h4 class="ptitle text-center leading-normal"><!--{{post.name}} -->example3</h4>
-                        <p class="leading-normal"><!--{{post.info}} -->info3</p>
-                        <p class="leading-loose"><!--{{post.type}} -->cardio</p>
-                        <div class="flex justify-end">
-                          <button class="bg-green-700 rounded-full text-red-100 w-1/6">DELETE</button>
-                        </div>
-                      </div>
-                    <!--{{/each}} -->
-                </div>
-                <div id="chart" class="w-2/6">
-                  <p class="postcard">placeholder</p>
-                </div>
+      <div id="recommendations" class="col w5/6 m-10">
+        <!-- {{#each recommendations as |recommendation|}} -->
+        <div class="">
+            <h3 class="rectitle">Title<!--{{recommendation.title}}--></h3>
+            <div class="row p-5 flex">
+              <p class="p-5 w-5/6 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<!--{{recommendation.type}}--></p>
+              <img class="recimg w-1/6 h-32 row m-0"><!--{{recommendation.image}}--></img>
             </div>
         </div>
+        <!-- {{/each}} -->
     </div>
-              
-    <script src=""></script>
     </section>
 </body>
 
