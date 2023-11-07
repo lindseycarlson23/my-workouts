@@ -31,6 +31,13 @@ Workout.init(
         favorite: {
             type: DataTypes.Boolean,
             defaultValue: false,
+        },
+        userid: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'User',
+                key: 'id',
+            },
         }
     },
     {
