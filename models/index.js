@@ -1,31 +1,18 @@
 const User = require('./User');
 const Workout = require('./Workout');
-const Favorite = require('./Favorite');
-///--------------------------------------------------
-User.hasMany(Favorite, {
-    foreignKey: 'userId',
-    onDelete: 'CASCADE',
-}
-);
+// const Favorite = require('./Favorite');
 
-Favorite.belongsTo(User, {
-    foreignKey: 'user_id'
+User.hasOne(Workout, {
+    foreignKey: 'userid',
+    onDelete: 'CASCADE'
 });
 
-///---------------------------------------------------
-
-Workout.belongsToMany(User, {
-    through: 'Favorite',
-    foreignKey: 'workoutId',
-  });
-
-
-  Favorite.belongsTo(Workout, {
-    foreignKey: 'workoutId',
-  });
+Workout.belongsTo(User, {
+    foreignKey: 'userid'
+});
 
   // sequelize.sync({ force: false }).then(() => {
   //   console.log('Database and tables synced!');
   // });
 
-  module.exports = {User ,Workout,Favorite};
+  module.exports = {User ,Workout};
