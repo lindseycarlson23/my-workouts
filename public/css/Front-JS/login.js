@@ -7,14 +7,14 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector()
 //If email and password are filled out 
     if (email && password){
-        const response = await fetch('/', {
+        const response = await fetch('/api/users/login', {
             method: 'POST',
             body:JSON.stringify({email, password}),
             headers: { 'Content-Type': 'application/json' },
         })
 
         if (response.ok){
-            document.location.replace('/profile');
+            document.location.replace('/userpage');
         }
     }
 }
@@ -29,17 +29,17 @@ const signupFormHandler = async (event) => {
     const password = document.querySelector()
 //if full name/email/password are filled out 
     if (fullName && email && password){
-        const response = await fetch('/', {
+        const response = await fetch('/api/users', {
             method:'POST',
             body:JSON.stringify({fullName, email, password}),
             headers: { 'Content-Type': 'application/json' },
         })
 
         if (response.ok){
-            document.location.replace('/profile')
+            document.location.replace('/userpage')
         }
     }
 }
 
-document.querySelector('').addEventListener('submit', loginFormHandler)
-document.querySelector('').addEventListener('submit', signupFormHandler)
+document.querySelector('#mainLogIn').addEventListener('submit', loginFormHandler)
+document.querySelector('#signup').addEventListener('submit', signupFormHandler)
