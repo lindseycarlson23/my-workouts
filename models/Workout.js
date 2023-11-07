@@ -8,6 +8,7 @@ Workout.init(
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            primaryKey: true,
         },
         title: {
             type: DataTypes.STRING,
@@ -28,7 +29,7 @@ Workout.init(
         },
     },
     {
-        equelize,
+    sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,

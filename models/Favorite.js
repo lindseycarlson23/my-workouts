@@ -9,7 +9,7 @@ Favorite.init(
         id: {
             type: DataTypes.INTEGER,
             allowNull:false,
-            PrimaryKey: true,
+            primaryKey: true,
             autoIncrement: true,
         },
         title: {
@@ -23,4 +23,13 @@ Favorite.init(
             },
         },
     },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'favorite',
+      }
 )
+
+module.exports = Favorite;
