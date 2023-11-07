@@ -1,27 +1,18 @@
 const router = require('express').Router();
-
-
-// Import the custom middleware
+const { Workout, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 
+
+
 // Get route to show existing favorites workout data for logged in user
-// Tutor note: maybe use req.session.user_id instead
-router.get('/:id', async (req, res) => {
+router.get('/:id', async (req, res) => { //this is the same as /home/:id
     try {
-       // NEED TO UPDATE MODEL INFO ONCE IT EXISTS
-      const woData = await Workout.find({ userId: req.params.id})
+      console.log(req.params);
+     
+      // const woData = await Workout.findByPk({ userId: req.params.id})
 
-      // Serialize data so the template can read it
-      const workouts = woData.map(workout => workout.get({ plain: true}))
-
-      res.render('homepage', {
-        workouts,
-        logged_in: req.session.logged_in
-      })
-
-      // this shows all the workouts
-      const workoutData = await Workout.findAll({
+      const workoutData = await Workout.findByPk(req.params.id, {
         include: [
           {
             model: User,
@@ -29,7 +20,14 @@ router.get('/:id', async (req, res) => {
           },
         ],
       });
+      console.log(workoutData);
+      
+      res.render('homepage', {   // THIS TELLS HANDLEBARS TO RENDER THE MAIN PLUS HOMEPAGE
+        Workout,
+        logged_in: req.session.logged_in
+      })
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   });
@@ -63,3 +61,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 })
 // Get Route to show suggestion workouts - randomly chosen
+
+
+module.exports = router;

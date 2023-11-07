@@ -8,7 +8,7 @@ User.hasMany(Favorite, {
 }
 );
 
-Favorite.belongstTo(User, {
+Favorite.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
@@ -24,8 +24,8 @@ Workout.belongsToMany(User, {
     foreignKey: 'workoutId',
   });
 
-  sequelize.sync({ force: false }).then(() => {
-    console.log('Database and tables synced!');
-  });
+  // sequelize.sync({ force: false }).then(() => {
+  //   console.log('Database and tables synced!');
+  // });
 
   module.exports = {User ,Workout,Favorite};
