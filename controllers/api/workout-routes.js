@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Workout } = require('../../models');
-const withAuth = require('../..utils/auth');
+const withAuth = require('../../utils/auth');
 
 // Post route with new workout data from user
 router.post('/:id', withAuth, async (req, res) => {
