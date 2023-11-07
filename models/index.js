@@ -11,8 +11,8 @@ Workout.belongsTo(User, {
     foreignKey: 'userid'
 });
 
-  sequelize.sync({ force: false }).then(() => {
-    console.log('Database and tables synced!');
-  });
+  // sequelize.sync({ force: false }).then(() => {
+  //   console.log('Database and tables synced!');
+  // });
 
   module.exports = {User ,Workout};

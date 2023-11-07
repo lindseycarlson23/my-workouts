@@ -2,13 +2,13 @@ const router = require('express').Router();
 const { Workout } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Post route with new workout data from user
-router.post('/', withAuth, async (req, res) => {
+// Post route with new workout data from user THIS WORKS
+router.post('/', async (req, res) => {
     const body = req.body
     try {
         const newWorkout = await Workout.create({ 
             ...body, 
-            userId: req.session.user_id, 
+            user_id: req.session.user_id, 
         });
 
         res.status(200).json(newWorkout)
@@ -21,32 +21,35 @@ router.post('/', withAuth, async (req, res) => {
 
 
 // Put route to modify content for a specific workout - DO WE HAVE TO HAVE THIS?
-router.put('/workouts/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     const body = req.body
+    console.log(body);
     try {
-        const [affectedRows] = await Workout.update({ body, 
+        const changedWorkout = await Workout.update(body, { 
             where: {
-                id: req.params.id
-            }
-        })
-
-        //send the data
-        res.status(200).json(body);
-        // or render template
+                id: req.params.id,
+            },
+        });
+        console.log(changedWorkout);
+        if (!changedWorkout[0]) {
+            res.status(404).json({ message: 'No workout with this id!' });
+            return;
+        }
+        res.status(200).json(changedWorkout);
         } catch (err) {
             console.error(err);
             res.status(500).send(err)
         }
-})
+});
 
 
 // delete workout - 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const workoutData = await Workout.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.session.user_id,
+                // user_id: req.session.user_id,
             },
         });
         
