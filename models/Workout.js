@@ -32,7 +32,7 @@ Workout.init(
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         },
-        userid: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'User',

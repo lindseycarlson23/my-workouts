@@ -1,6 +1,18 @@
+[
 {
-    "title":"Runnng",
-    "description":"A 30 minute Run",
-    "type":"Cardio",
-    "rating":5  
+	"title": "New 30 Min Yoga Class",
+	"description": "detailed description",
+	"type": "Yoga",
+	"rating": "5",
+	"videoLink": "video_url",
+	"favorite": true
+},
+{
+	"title": "New 30 Min Spin Class",
+	"description": "another detailed description",
+	"type": "Spin",
+	"rating": "5",
+	"videoLink": "video_url",
+	"favorite": true
 }
+]
