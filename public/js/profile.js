@@ -1,3 +1,43 @@
+//Chart Set up
+const ctx = document.getElementById('myChart');
+      
+       var myChart = new Chart(ctx, {
+        type: 'bar',
+            data: {
+            labels: [],
+            datasets: [{
+            label: '# of Votes',
+            borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks:{
+                    display:false
+                }
+              }
+            }
+          }
+        });
+
+        function addData(chart) {
+            chart.data.labels.push(document.getElementById("category").value);
+            chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(document.getElementById("calories").value*1);
+            });
+            chart.update();
+        }
+
+        function removeData(chart) {
+            chart.data.labels.pop();
+            chart.data.datasets.forEach((dataset) => {
+                dataset.data.pop();
+            });
+            chart.update();
+        }
+
 //Logout button on profile page 
 const logout = async () => {
     const response = await fetch ('/api/users/logout', {
@@ -14,7 +54,7 @@ const delButtonHandler = async (event) => {
     if(event.target.hasAttribute('data-id')){
         const id = event.target.getAttribute('data-id'); // need to assign data-id="{{post.id}} to the post delete button
 
-        const response = await fetch(`workout/${id}`, {
+        const response = await fetch(`/api/workout/${id}`, {
             method:'DELETE',
         });
 
@@ -31,4 +71,5 @@ const addPost = async (event) => {
 }
 
 document.querySelector('#Logout').addEventListener9('click', logout);
-document.querySelector('#postDelete').addEventListener('click', delButtonHandler);
+document.querySelector('#post-workout').addEventListener('click', delButtonHandler);
+document.querySelector('#createPost').addEventListener('click', addPost);

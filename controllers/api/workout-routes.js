@@ -3,7 +3,7 @@ const { Workout } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Post route with new workout data from user
-router.post('/:id', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     const body = req.body
     try {
         const newWorkout = await Workout.create({ 

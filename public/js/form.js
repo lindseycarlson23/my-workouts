@@ -8,7 +8,7 @@ const newFormHandler = async (event) => {
     const video = document.querySelector('video input on form handlebar');
 
     if(title && description && type && rating && video) {
-        const response = await fetch('/api/workout', {
+        const response = await fetch('/api/workout/', {
             method:'POST',
             body: JSON.stringify({title, description, type, rating, video}),
             headers: {
