@@ -29,7 +29,7 @@ Workout.init(
             type: DataTypes.STRING,
         },
         favorite: {
-            type: DataTypes.Boolean,
+            type: DataTypes.BOOLEAN,
             defaultValue: false,
         },
         userid: {
