@@ -1,0 +1,11 @@
+<div id="recommendations" class="col w5/6 m-10">
+    {{#each recommendations as |recommendation|}}
+    <div>
+        <h3 class="rectitle">{{recommendation.title}}</h3>
+        <div class="row p-5 flex">
+            <p class="p-5 w-5/6 text-left">{{recommendation.type}}</p>
+            <img class="recimg w-1/6 h-32 row m-0">{{recommendation.image}}</img>
+        </div>
+    </div>
+    {{/each}}
+</div>
