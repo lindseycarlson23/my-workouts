@@ -3,12 +3,12 @@ const { Workout } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Post route with new workout data from user
-router.post('/:id', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     const body = req.body
     try {
         const newWorkout = await Workout.create({ 
             ...body, 
-            userId: req.params.id, 
+            userId: req.session.user_id, 
         });
 
         res.status(200).json(newWorkout)
@@ -21,7 +21,7 @@ router.post('/:id', withAuth, async (req, res) => {
 
 
 // Put route to modify content for a specific workout - DO WE HAVE TO HAVE THIS?
-router.put('/workout/:id', async (req, res) => {
+router.put('/workouts/:id', async (req, res) => {
     const body = req.body
     try {
         const [affectedRows] = await Workout.update({ body, 

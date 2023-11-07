@@ -5,14 +5,14 @@ const withAuth = require('../utils/auth');
 
 
 
-// Get route to show existing favorites workout data for logged in user
-router.get('/:id', async (req, res) => { //this is the same as /home/:id
+// Get route for homepage
+router.get('/', async (req, res) => { //this is the same as /home/:id
     try {
       console.log(req.params);
      
       // const woData = await Workout.findByPk({ userId: req.params.id})
 
-      const workoutData = await Workout.findByPk(req.params.id, {
+      const workoutData = await Workout.findByPk(req.session.id, {
         include: [
           {
             model: User,
@@ -60,6 +60,8 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 })
+
+
 // Get Route to show suggestion workouts - randomly chosen
 
 
