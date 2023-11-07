@@ -1,4 +1,4 @@
-const { Model, DataTypes, INTEGER} = require('sequelize');
+const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Workout extends Model {}
@@ -9,6 +9,7 @@ Workout.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
+            autoIncrement: true,
         },
         title: {
             type: DataTypes.STRING,
@@ -27,6 +28,10 @@ Workout.init(
         videoLink: {
             type: DataTypes.STRING,
         },
+        favorite: {
+            type: DataTypes.Boolean,
+            defaultValue: false,
+        }
     },
     {
     sequelize,

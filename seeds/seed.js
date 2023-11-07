@@ -1,8 +1,8 @@
 const sequelize = require('../config/connection');
-const {User, Workout, Favorite} = require('../models');
+const {User, Workout,} = require('../models');
 
 const userData = require('./userData.json');
-const favoriteData = require('./favoriteData.json');
+// const favoriteData = require('./favoriteData.json');
 const workoutData = require('./workoutData.json');
 
 const seedDatabase = async () => {
@@ -18,7 +18,8 @@ const seedDatabase = async () => {
     // Create workouts for each user
     const workouts = await Workout.bulkCreate(workoutData, {
       returning: true,
-    });
+    }); 
+    await user.addWorkouts(workouts);
 }
 
 
