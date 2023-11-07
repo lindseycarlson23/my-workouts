@@ -11,13 +11,8 @@ router.post('/:id', withAuth, async (req, res) => {
             userId: req.params.id, 
         });
 
-        // either send the data
         res.status(200).json(newWorkout)
-        // or render a template
-        // res.render('newWorkout', {
-        //     newWorkout,
-        //     logged_in: req.session.logged_in
-        // });
+      
     } catch (err) {
         console.log(err)
         res.status(500).json(err)
