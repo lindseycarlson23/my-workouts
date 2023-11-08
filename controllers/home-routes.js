@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 
 
 // Get route for homepage
-router.get('/', async (req, res) => { //this is the same as /home/:id
+router.get('/', async (req, res) => { 
     try {
       console.log(req.params);
      
@@ -35,7 +35,7 @@ router.get('/', async (req, res) => { //this is the same as /home/:id
 
 
 
-//WORK ON THIS
+//WORK ON THIS - CAN RENDER THE PROFILE FROM THE USER ROUTES
 // Get route to show the user profile
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -62,7 +62,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('loginpage');
 })
 
 

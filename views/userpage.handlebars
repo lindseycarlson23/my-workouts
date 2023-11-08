@@ -10,18 +10,19 @@
         </div>
         <div id="postsec" class="row w-5/6 mt-8 pl-20 h-10">
             <div id="addbtn" class="row w-full h-20">
-                <h2 id="username" class="w-1/2">{{name}}'s posts:</h2>
-                <button ata-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 absolute right-16 article-text" type="button" id="createPost">CREATE POST</button>
+                <h2 id="username" class="w-1/2">{{name}}'s workouts:</h2>
+                <button ata-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 absolute right-16 article-text" type="button" id="Login">CREATE POST</button>
             </div>
             <div class="w-full row" id="post-workout">
                 <div id="posts" class="col w-4/6">
-                    {{#each posts as |post|}}
+                    {{#each workouts as |workout|}}
                       <div class="postcard w-full flex flex-col">
-                        <h4 class="ptitle text-center leading-normal">{{post.name}}</h4>
-                        <p class="leading-normal">{{post.info}}</p>
-                        <p class="leading-loose">{{post.type}}</p>
-                        <p class="leading-loose">{{post.rating}}</p>
-                        <p class="leading-loose">{{post.videolink}}</p>
+                        <h4 class="ptitle text-center leading-normal">{{workout.title}}</h4>
+                        <p class="leading-normal">{{workout.description}}</p>
+                        <p class="leading-loose">{{workout.type}}</p>
+                        <p class="leading-loose">{{workout.rating}}</p>
+                        <p class="leading-loose">{{workout.videolink}}</p>
+                        <p class="leading-loose">{{workout.favorite}}</p>
                         <div class="flex justify-end">
                           <button class="bg-green-700 rounded-full text-red-100 w-1/6" data-id="{{workout.id}}">DELETE</button>
                         </div>
@@ -121,6 +122,6 @@
       </div>
   </div> 
               
-    <script src="../public/js/profile.js"></script>
-    <script src="../public/js/main.js"></script>
-    <script src="../public/js/form.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/form.js"></script>
