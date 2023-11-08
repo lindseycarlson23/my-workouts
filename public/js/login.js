@@ -24,7 +24,7 @@ const loginFormHandler = async (event) => {
 
 //Signup function on Login/Signup page - need to add correct fetch route 
 const signupFormHandler = async (event) => {
-    event.prevant.defualt();
+    event.preventDefault();
 
     //Get full name/email/password from signup form 
     const fullName = document.querySelector('#name-signup')
