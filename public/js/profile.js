@@ -1,44 +1,4 @@
-//Chart Set up
-const ctx = document.getElementById('myChart');
-      
-       var myChart = new Chart(ctx, {
-        type: 'bar',
-            data: {
-            labels: [],
-            datasets: [{
-            label: '# of Votes',
-            borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true,
-                ticks:{
-                    display:false
-                }
-              }
-            }
-          }
-        });
-
-        function addData(chart) {
-            chart.data.labels.push(document.getElementById("category").value);
-            chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(document.getElementById("calories").value*1);
-            });
-            chart.update();
-        }
-
-        function removeData(chart) {
-            chart.data.labels.pop();
-            chart.data.datasets.forEach((dataset) => {
-                dataset.data.pop();
-            });
-            chart.update();
-        }
-
-//Logout button on profile page 
+//Logout button that will show from main.handlebars  
 const logout = async () => {
     const response = await fetch ('/api/users/logout', {
         method: 'POST',

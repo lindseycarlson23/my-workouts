@@ -11,7 +11,7 @@
         <div id="postsec" class="row w-5/6 mt-8 pl-20 h-10">
             <div id="addbtn" class="row w-full h-20">
                 <h2 id="username" class="w-1/2">{{name}}'s posts:</h2>
-                <button ata-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 absolute right-16 article-text" type="button" id="Login">CREATE POST</button>
+                <button ata-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 absolute right-16 article-text" type="button" id="createPost">CREATE POST</button>
             </div>
             <div class="w-full row" id="post-workout">
                 <div id="posts" class="col w-4/6">
@@ -30,15 +30,16 @@
                     {{/each}}
                 </div>
                 <div id="chart" class="w-2/6">
+                <!-- Chart -->
                   <canvas id="myChart"></canvas>
                   <div>
-                      <label for="calories">Calories:</label>
+                      <label for="calories">Calories burned:</label>
                       <input name="calories" id="calories" type="number">
-                      <label for="category">Category:</label>
-                      <input name="category" id="category" type="text">
+                      <label for="date">Date:</label>
+                      <input name="date" id="date" type="text">
                   </div>
-                  <button onclick="addData(myChart)"> Add Data</button>
-                  <button onclick="removeData(myChart)">Remove Data</button>
+                  <button onclick="addData(myChart)">Add</button>
+                  <button onclick="removeData(myChart)">Remove</button>
                 </div>
             </div>
         </div>
@@ -109,7 +110,7 @@
                         <label for="videoLink" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                         <input type="videoLink" name="videoLink" id="videoLink" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required>
                     </div>
-                    <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Post</button>
+                    <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="postButton">Post</button>
                   </form>
               </div>
           </div>
@@ -117,3 +118,4 @@
   </div> 
               
     <script src="../public/js/profile.js"></script>
+    <script src="../public/js/main.js"></script>
