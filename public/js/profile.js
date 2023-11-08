@@ -6,7 +6,7 @@ const logout = async () => {
     });
 
     if (response.ok) {
-        document.locaion.replace('/homepage')
+        document.location.replace('/')
     }
 }
 //Delete button for deleting posts 
@@ -30,6 +30,6 @@ const addPost = async (event) => {
     document.location.replace('/form handlebar')
 }
 
-document.querySelector('#Logout').addEventListener9('click', logout);
+document.querySelector('#Logout').addEventListener('click', logout);
 document.querySelector('#post-workout').addEventListener('click', delButtonHandler);
 document.querySelector('#createPost').addEventListener('click', addPost);
