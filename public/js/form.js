@@ -1,11 +1,11 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
 
-    const title = document.querySelector('title input on form handlebar');
-    const description = document.querySelector('description input on form handlebar');
-    const type = document.querySelector('type input on form handlebar');
-    const rating = document.querySelector('rating input on form handlebar');
-    const video = document.querySelector('video input on form handlebar');
+    const title = document.querySelector('#title');
+    const description = document.querySelector('#description');
+    const type = document.querySelector('#typeOfWorkout');
+    const rating = document.querySelector('');
+    const video = document.querySelector('#videoLink');
 
     if(title && description && type && rating && video) {
         const response = await fetch('/api/workout/', {
