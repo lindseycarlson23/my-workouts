@@ -39,12 +39,14 @@ router.get('/', async (req, res) => {
 // Get route to show the user profile
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    const userData = await User.findbyPk(req.session.user_id, {
+    console.log(req.session);
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Workout }],
     });
 
     const user = userData.get({ plain: true });
+    console.log(user);
 
     res.render('userpage', {
       ...user,

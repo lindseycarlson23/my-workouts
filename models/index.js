@@ -15,4 +15,4 @@ Workout.belongsTo(User, {
   //   console.log('Database and tables synced!');
   // });
 
-  module.exports = {User ,Workout};
+  module.exports = {User, Workout};
