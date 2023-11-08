@@ -11,5 +11,5 @@
         }
 // Intialize the Event Listners
 document.querySelector('#USER-btn').addEventListener('click', userPage);
-document.querySelector('#login').addEventListener('click', loginPage);
+document.querySelector('#Login').addEventListener('click', loginPage);
 
