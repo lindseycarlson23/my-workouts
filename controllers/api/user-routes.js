@@ -56,26 +56,27 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id 
       req.session.loggedIn = true;
     });
+    res.status(200).json(userData);
       // since the user is valid, make a second db call
       // that gets all posts by username
       // const workouts = await Workout.findByPk(req.session.id);
       // console.log(workouts);
-      const workouts = await Workout.findByPk(req.session.id, {
-        // this include adds the user_id to the workout table!
-          include: [
-            {
-              model: User,
-              attributes: ['id'],
-            },
-          ],
-        });
-      // combine username and workouts as one object and send that variable to handlebars
-      //then update the hb template ex: data.username and #each data.workouts
-      res.render('userpage', {
-        name,
-        workouts,
-        logged_in: true
-      });
+      // const workouts = await Workout.findByPk(req.session.id, {
+      //   // this include adds the user_id to the workout table!
+      //     include: [
+      //       {
+      //         model: User,
+      //         attributes: ['id'],
+      //       },
+      //     ],
+      //   });
+      // // combine username and workouts as one object and send that variable to handlebars
+      // //then update the hb template ex: data.username and #each data.workouts
+      // res.render('userpage', {
+      //   name,
+      //   workouts,
+      //   logged_in: true
+      // });
    
   } catch (err) {
     console.error(err)
