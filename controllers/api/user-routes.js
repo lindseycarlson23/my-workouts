@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Login and send to userpage
+// Login route
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -51,12 +51,12 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-
+   
     req.session.save(() => {
       req.session.user_id = userData.id 
       req.session.loggedIn = true;
+      res.status(200).json({user: userData});
     });
-    res.status(200).json(userData);
       // since the user is valid, make a second db call
       // that gets all posts by username
       // const workouts = await Workout.findByPk(req.session.id);

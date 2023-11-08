@@ -5,6 +5,8 @@ const loginFormHandler = async (event) => {
     //Get the email/password values from the login form 
     const email = document.querySelector('#email-login').value;
     const password = document.querySelector('#password-login').value;
+    console.log(email);
+    console.log(password);
 //If email and password are filled out 
     if (email && password){
         const response = await fetch('/api/users/login', {
@@ -12,10 +14,11 @@ const loginFormHandler = async (event) => {
             body:JSON.stringify({email, password}),
             headers: { 'Content-Type': 'application/json' },
         })
-
+        console.log(response);
         if (response.ok){
             document.location.replace('/profile');
         }
+        
     }
 }
 
