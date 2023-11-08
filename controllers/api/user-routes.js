@@ -1,23 +1,23 @@
 const router = require('express').Router();
 // import models here
-const { User } = require('../../models');
+const { User, Workout } = require('../../models');
 
 //import auth?
 
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.create({
+    const userData = await User.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
     });
 
     req.session.save(() => {
-      req.session.user_id = dbUserData.id;
+      req.session.user_id = userData.id;
       req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
+      res.status(200).json(userData);
     });
   } catch (err) {
     console.log(err);
@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Login
+// Login and send to userpage
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -41,6 +41,8 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    const name = userData.name
+
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -53,10 +55,30 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id 
       req.session.loggedIn = true;
-
-      res.json({ user: userData, message: 'You are now logged in!' });
     });
+      // since the user is valid, make a second db call
+      // that gets all posts by username
+      // const workouts = await Workout.findByPk(req.session.id);
+      // console.log(workouts);
+      const workouts = await Workout.findByPk(req.session.id, {
+        // this include adds the user_id to the workout table!
+          include: [
+            {
+              model: User,
+              attributes: ['id'],
+            },
+          ],
+        });
+      // combine username and workouts as one object and send that variable to handlebars
+      //then update the hb template ex: data.username and #each data.workouts
+      res.render('userpage', {
+        name,
+        workouts,
+        logged_in: true
+      });
+   
   } catch (err) {
+    console.error(err)
     res.status(400).json(err);
   }
 });
