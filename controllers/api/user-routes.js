@@ -61,15 +61,15 @@ router.post('/login', async (req, res) => {
       // that gets all posts by username
       // const workouts = await Workout.findByPk(req.session.id);
       // console.log(workouts);
-      // const workouts = await Workout.findByPk(req.session.id, {
-      //   // this include adds the user_id to the workout table!
-      //     include: [
-      //       {
-      //         model: User,
-      //         attributes: ['id'],
-      //       },
-      //     ],
-      //   });
+      // // const workouts = await Workout.findByPk(req.session.id, {
+      // //   // this include adds the user_id to the workout table!
+      // //     include: [
+      // //       {
+      // //         model: User,
+      // //         attributes: ['id'],
+      // //       },
+      // //     ],
+      // //   });
       // // combine username and workouts as one object and send that variable to handlebars
       // //then update the hb template ex: data.username and #each data.workouts
       // res.render('userpage', {

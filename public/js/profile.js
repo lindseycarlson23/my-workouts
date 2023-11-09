@@ -29,12 +29,11 @@ const delButtonHandler = async (event) => {
     }
 }
 
-//click the createPost button to display the form 
-
-// const showPostForm = async (event) => {
-//     event.preventDefault();
-//     document.location.replace('/go to authentication-modal')
-// }
+//click the addPost button to display the form 
+const addPost = async (event) => {
+    event.preventDefault();
+    document.location.replace('/form handlebar')
+}
 
 openBtn.addEventListener("click", function () {
     modal.style.display = "block";
@@ -50,4 +49,5 @@ window.addEventListener("click", function (event) {
 
 document.querySelector('#Logout').addEventListener('click', logout);
 document.querySelector('#post-workout').addEventListener('click', delButtonHandler);
+
 document.querySelector('#open-btn').addEventListener('click', addPost);
