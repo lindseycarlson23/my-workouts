@@ -6,7 +6,7 @@
 
 [Login Page](./public/images/loginpage.PNG)
 
-[User Page](img_link)
+[User Page](./public/images/UserPage.PNG)
 
 This grand undertaking takes all of our knowledge up to this point inorder to make a website that can reccomend workouts as well as having your own userpage to keep notes and rating on the workouts you've done in the past.
 
@@ -55,6 +55,8 @@ Starting off the website will land you on a simple page showing a navbar as well
 
 [NPM sequelize](https://www.npmjs.com/package/sequelize)
 
+[NPM Chart.js](https://www.npmjs.com/package/chart.js)
+
 [Tailwind](https://tailwindcss.com/)
 
 ## License
@@ -65,6 +67,14 @@ Starting off the website will land you on a simple page showing a navbar as well
 ## Contact Us
 <a id='questions'></a>
 
-[Github]()
+[Github](https://github.com/lindseycarlson23/my-workouts)
 
-[Email]()
+[Develor Jae](jaehkim23@gmail.com)
+
+[Develor Lindsey](lindseycarlson23@gmail.com)
+
+[Develor Brendan](brendan.r.le@gmail.com)
+
+[Develor Franco](frankiebelize@gmail.com)
+
+[Develor Jose](jb5523182@gmail.com)
