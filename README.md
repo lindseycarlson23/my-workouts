@@ -2,9 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Landing Page](img_link)
+[Landing Page](./public/images/mainpage.PNG)
 
-[Login Page](img_link)
+[Login Page](./public/images/loginpage.PNG)
 
 [User Page](img_link)
 

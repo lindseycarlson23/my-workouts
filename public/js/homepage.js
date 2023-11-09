@@ -7,9 +7,8 @@
     // Make a function that will take users to the Log-in/sign-up page 
         const loginPage = async (event) => {
             event.preventDefault();
-            document.location.replace('/loginpage')
+            document.location.replace('/login')
         }
 // Intialize the Event Listners
-document.querySelector('#USER-btn').addEventListener('click', userPage);
 document.querySelector('#Login').addEventListener('click', loginPage);
 

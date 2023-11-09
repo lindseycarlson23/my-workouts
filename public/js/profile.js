@@ -30,6 +30,18 @@ const addPost = async (event) => {
     document.location.replace('/form handlebar')
 }
 
+openBtn.addEventListener("click", function () {
+    modal.style.display = "block";
+});
+  closeBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+  window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+});
+
 document.querySelector('#Logout').addEventListener9('click', logout);
 document.querySelector('#post-workout').addEventListener('click', delButtonHandler);
 document.querySelector('#createPost').addEventListener('click', addPost);
