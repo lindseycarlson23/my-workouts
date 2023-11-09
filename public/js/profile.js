@@ -2,7 +2,7 @@ var modal = document.getElementById("authentication-modal");
 var openBtn = document.getElementById("open-btn");
 var closeBtn = document.getElementById("close-btn");
 var searchBtn = document.getElementById("postButton");
-
+//var modalForm = document.getElementById("modal-form");
 //Logout button that will show from main.handlebars  
 const logout = async () => {
     const response = await fetch ('/api/users/logout', {
@@ -28,6 +28,7 @@ const delButtonHandler = async (event) => {
         }
     }
 }
+
 
 //click the addPost button to display the form 
 const addPost = async (event) => {

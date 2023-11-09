@@ -1,3 +1,4 @@
+
 const newFormHandler = async (event) => {
     event.preventDefault();
     alert('I am running!');
@@ -21,4 +22,5 @@ const newFormHandler = async (event) => {
     }
 }
 
-document.querySelector('#postButton').addEventListener('submit', newFormHandler);
+
+// document.querySelector('#postButton').addEventListener('submit', newFormHandler);
