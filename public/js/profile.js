@@ -33,7 +33,7 @@ const delButtonHandler = async (event) => {
 //click the addPost button to display the form 
 const addPost = async (event) => {
     event.preventDefault();
-    document.location.replace('/profile')
+    // document.location.replace('/profile')
 }
 
 openBtn.addEventListener("click", function () {
