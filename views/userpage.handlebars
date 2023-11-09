@@ -1,14 +1,13 @@
 <div class="row w-full pl-6">
-        <div id="postsec" class="row w-full mt-8 pl-20 h-10">
+        <div id="postsec" class="row w-full mt-8 pl-20">
             <div id="addbtn" class="row w-full h-20">
                 <h2 id="username" class="w-1/2">{{name}}'s workouts:</h2>
                 <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 absolute right-8 article-text" type="button" id="open-btn">
                   Create Post
                 </button>            
             </div>
-            <div class="w-full row" id="post-workout">
-                <div id="posts" class="col w-4/6">
-                <p> test please</p>
+            <div class="w-full row pr-4" id="post-workout">
+                <div id="posts" class="col w-4/6" style="padding-right: 10px">
                     {{#each workouts as |workout|}}
                       <div class="postcard w-full flex flex-col">
                         <h4 class="ptitle text-center leading-normal">{{workout.title}}</h4>
@@ -20,21 +19,22 @@
                           <button class="bg-green-700 rounded-full text-red-100 w-1/6" data-id="{{workout.id}}">DELETE</button>
                         </div>
                       </div>
+                      {{/each}}
+                    </div>
+                    <div id="chart" class="w-2/6">
+                    <!-- Chart -->
+                      <canvas id="myChart"></canvas>
+                      <div>
+                          <label for="calories">Calories burned:</label>
+                          <input name="calories" id="calories" type="number">
+                          <label for="date">Date:</label>
+                          <input name="date" id="date" type="text">
                       </div>
-                    {{/each}}
+                      <button onclick="addData(myChart)">Add</button>
+                      <button onclick="removeData(myChart)">Remove</button>
+                    </div>
                 </div>
-                <div id="chart" class="w-2/6">
-                <!-- Chart -->
-                  <canvas id="myChart"></canvas>
-                  <div>
-                      <label for="calories">Calories burned:</label>
-                      <input name="calories" id="calories" type="number">
-                      <label for="date">Date:</label>
-                      <input name="date" id="date" type="text">
-                  </div>
-                  <button onclick="addData(myChart)">Add</button>
-                  <button onclick="removeData(myChart)">Remove</button>
-                </div>
+                
             </div>
         </div>
     </div>
