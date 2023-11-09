@@ -1,6 +1,6 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
-
+    alert('I am running!');
     const title = document.querySelector('#title');
     const description = document.querySelector('#description');
     const type = document.querySelector('#typeOfWorkout');
@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
             },
         })
         if(response.ok){
-            document.location.replace('/userpage')
+            // document.location.replace('/userpage')
         }
     }
 }
