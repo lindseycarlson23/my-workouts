@@ -6,7 +6,7 @@ const logout = async () => {
     });
 
     if (response.ok) {
-        document.locaion.replace('/homepage')
+        document.location.replace('/')
     }
 }
 //Delete button for deleting posts 
@@ -42,6 +42,18 @@ openBtn.addEventListener("click", function () {
     }
 });
 
-document.querySelector('#Logout').addEventListener9('click', logout);
+openBtn.addEventListener("click", function () {
+    modal.style.display = "block";
+});
+  closeBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+  window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+});
+
+document.querySelector('#Logout').addEventListener('click', logout);
 document.querySelector('#post-workout').addEventListener('click', delButtonHandler);
 document.querySelector('#createPost').addEventListener('click', addPost);

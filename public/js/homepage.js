@@ -8,7 +8,9 @@
         const loginPage = async (event) => {
             event.preventDefault();
             document.location.replace('/login')
+            console.log("hi")
         }
 // Intialize the Event Listners
+
 document.querySelector('#Login').addEventListener('click', loginPage);
 
