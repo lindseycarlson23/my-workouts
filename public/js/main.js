@@ -7,7 +7,9 @@ const ctx = document.getElementById('myChart');
             labels: [],
             datasets: [{
             label: '# Calories burned',
-            borderWidth: 1
+            borderWidth: 2,
+            backgroundColor: '#39805b',
+            borderColor: '#182c23',
             }]
           },
           options: {
