@@ -44,12 +44,27 @@ router.get('/profile', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Workout }],
     });
-
+    // console.log(userData);
     const user = userData.get({ plain: true });
-    console.log(user);
+    const workoutsData = await Workout.findAll({ where: {user_id: req.session.user_id } });
+
+    const workouts = workoutsData.map((workout) => workout.get({ plain: true }));
+
+    // const workouts = workoutsData.get({ plain: true });
+    // console.log(workouts);
+    console.log('here is the workouts data', workouts);
 
     res.render('userpage', {
       ...user,
+      // workouts: [{
+      //   "title": "test 7",
+      //   "description": "Love it",
+      //   "type": "Meditation",
+      //   "rating": "4",
+      //   "videoLink": "video_url",
+      //   "favorite": false
+      // } ],
+      workouts,
       logged_in: true
     });
   } catch (err) {

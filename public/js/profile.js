@@ -32,7 +32,7 @@ const delButtonHandler = async (event) => {
 //click the addPost button to display the form 
 const addPost = async (event) => {
     event.preventDefault();
-    document.location.replace('/form handlebar')
+    document.location.replace('/profile')
 }
 
 openBtn.addEventListener("click", function () {
@@ -49,4 +49,5 @@ window.addEventListener("click", function (event) {
 
 document.querySelector('#Logout').addEventListener('click', logout);
 document.querySelector('#post-workout').addEventListener('click', delButtonHandler);
+
 document.querySelector('#open-btn').addEventListener('click', addPost);
