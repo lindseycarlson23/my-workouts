@@ -1,17 +1,10 @@
 <div class="row w-full pl-6">
-        <div id="recommendations" class="col w-1/6 ml-1 mt-8">
-            {{#each recommendations as |recommendation|}}
-                <div class="reccard">
-                    <h3 class="rectitle">{{recommendation.title}}</h3>
-                    <img class="recimg w-full h-28">{{recommendation.image}}</img>
-                    <p>{{recommendation.type}}</p>
-                </div>
-            {{/each}}
-        </div>
-        <div id="postsec" class="row w-5/6 mt-8 pl-20 h-10">
+        <div id="postsec" class="row w-full mt-8 pl-20 h-10">
             <div id="addbtn" class="row w-full h-20">
                 <h2 id="username" class="w-1/2">{{name}}'s workouts:</h2>
-                <button ata-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 absolute right-16 article-text" type="button" id="createPost">CREATE POST</button>
+                <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 absolute right-8 article-text" type="button" id="open-btn">
+                  Create Post
+                </button>            
             </div>
             <div class="w-full row" id="post-workout">
                 <div id="posts" class="col w-4/6">
@@ -50,31 +43,31 @@
       <div class="relative w-full max-w-md max-h-full">
           <!-- Modal content -->
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-              <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
+              <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal" id="close-btn">
                   <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                   </svg>
                   <span class="sr-only">Close modal</span>
               </button>
               <div class="px-6 py-6 lg:px-8">
-                  <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
+                  <h3 class="mb-4 text-xl font-medium text-gray-900 ">Post Your Workout</h3>
                   <form class="space-y-6" action="#">
                       <div>
-                          <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title of Post</label>
-                          <input type="title" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required>
+                          <label for="title" class="block mb-2 text-sm font-medium text-gray-900 ">Title of Post</label>
+                          <input type="title" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="My Awsome Workout" required>
                       </div>
                       <div>
-                          <label for="desciption" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                          <label for="desciption" class="block mb-2 text-sm font-medium text-gray-900 ">Description</label>
                           <input type="desciption" name="desciption" id="desciption" placeholder="I thought that..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                       </div>
                       <div>
-                        <label for="typeOfWorkout" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">type Of Workout</label>
+                        <label for="typeOfWorkout" class="block mb-2 text-sm font-medium text-gray-900 ">type Of Workout</label>
                         <select id="typeOfWorkout" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>type Of Workout</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="1">Cardio</option>
+                            <option value="2">Yoga</option>
+                            <option value="3">Strength Training</option>
+                            <option value="4">Getting Phat</option>
                         </select>
                     </div>
                     <label>
@@ -108,12 +101,8 @@
                         <span class="icon">★</span>
                       </label>
                     <div>
-                        <label for="videoLink" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Video Link</label>
-                        <input type="videoLink" name="videoLink" id="videoLink" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required>
-                    </div>
-                    <div class="flex items-center mb-4">
-                        <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                        <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Favorate</label>
+                        <label for="videoLink" class="block mb-2 text-sm font-medium text-gray-900 ">Video Link</label>
+                        <input type="videoLink" name="videoLink" id="videoLink" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="youtube.com/workout" required>
                     </div>
                     <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="postButton">Post</button>
                   </form>
