@@ -21,7 +21,7 @@ This grand undertaking takes all of our knowledge up to this point inorder to ma
 ## Description
 <a id='description'></a>
 
-
+This project was an idea born in the hopes of keeping past and future workouts available to search for. We faced problems with routes and front-end displays throughout the project. Luckily we solved those problems and created this web application. Although right now it still has bugs, we intend to fix and smooth out the remaining problems. So far we can traverse the three pages and create accounts. On the user page as of this momment you can pull up a model inorder to create posts, but as of right now no posts are actually created. We plan to fix that sooner rather than later, but with that said we are happy with the current functionally and we'll strive to fix the remainer soon.
 
 ## Installation
 
