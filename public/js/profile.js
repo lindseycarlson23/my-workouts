@@ -1,3 +1,8 @@
+var modal = document.getElementById("authentication-modal");
+var openBtn = document.getElementById("open-btn");
+var closeBtn = document.getElementById("close-btn");
+var searchBtn = document.getElementById("postButton");
+
 //Logout button that will show from main.handlebars  
 const logout = async () => {
     const response = await fetch ('/api/users/logout', {
@@ -29,18 +34,6 @@ const addPost = async (event) => {
     event.preventDefault();
     document.location.replace('/form handlebar')
 }
-
-openBtn.addEventListener("click", function () {
-    modal.style.display = "block";
-});
-  closeBtn.addEventListener("click", function () {
-    modal.style.display = "none";
-});
-  window.addEventListener("click", function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-});
 
 openBtn.addEventListener("click", function () {
     modal.style.display = "block";
