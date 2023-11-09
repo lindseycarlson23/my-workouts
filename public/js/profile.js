@@ -38,10 +38,10 @@ const addPost = async (event) => {
 openBtn.addEventListener("click", function () {
     modal.style.display = "block";
 });
-  closeBtn.addEventListener("click", function () {
+closeBtn.addEventListener("click", function () {
     modal.style.display = "none";
 });
-  window.addEventListener("click", function (event) {
+window.addEventListener("click", function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
@@ -49,4 +49,5 @@ openBtn.addEventListener("click", function () {
 
 document.querySelector('#Logout').addEventListener('click', logout);
 document.querySelector('#post-workout').addEventListener('click', delButtonHandler);
-// document.querySelector('#createPost').addEventListener('click', addPost);
+
+document.querySelector('#open-btn').addEventListener('click', addPost);

@@ -70,4 +70,8 @@ body {
 
 #chart {
     padding: 10px;
+    background-color: var(--primary);
+    border-radius: 5px;
+    border-color: var(--tertiary);
+    border-width: 2px;
 }
