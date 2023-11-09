@@ -24,12 +24,15 @@ const delButtonHandler = async (event) => {
     }
 }
 
-//click the addPost button to display the form 
-const addPost = async (event) => {
+//click the createPost button to display the form 
+
+const showPostForm = async (event) => {
     event.preventDefault();
-    document.location.replace('/form handlebar')
+    document.location.replace('/go to authentication-modal')
 }
+
+
 
 document.querySelector('#Logout').addEventListener('click', logout);
 document.querySelector('#post-workout').addEventListener('click', delButtonHandler);
-document.querySelector('#createPost').addEventListener('click', addPost);
+document.querySelector('#createPost').addEventListener('click', showPostForm);
