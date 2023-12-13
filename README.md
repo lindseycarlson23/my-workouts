@@ -29,7 +29,7 @@ This project was an idea born in the hopes of keeping past and future workouts a
 
 <a id='installation'></a>
 
-[Heroku Page](link)
+[Heroku Page](https://my-workouts-c1e5314d5b06.herokuapp.com/)
 
 ## Usage
 <a id='usage'></a>
